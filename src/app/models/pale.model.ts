@@ -9,5 +9,6 @@ export interface Pale{
     productos: number,
     precio: number,
     items: Item [],
+    categoria?:string;
 
 }

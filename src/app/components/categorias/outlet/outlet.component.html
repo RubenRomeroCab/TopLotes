@@ -1,0 +1,33 @@
+<div class="container text-center mb-5 mt-5">
+
+    <div class="row">
+      
+      <div  *ngFor="let item of paleOutlet"  class="col-lg-4 col-md-6 mb-4 ">
+        <div *ngIf="paleOutlet" class="card bg " >
+          <img 
+          [src]="item.vendido ? 'vendido.png' : 'pale.jpg'"
+          data-holder-rendered="true"
+          style="height: 300px; width: 100%; display: block;"
+          alt="Imagen del pale">
+
+          <div class="card-body bg " >
+            <h3 class="featurette-heading fw-normal lh-1 mb-3 mt-3">{{item.nombre}} <span class="text-body-secondary"><br>[{{item.productos}} productos]</span></h3>
+            <p class="lead">Palé de {{item.nombre}} sin revisar procedente de Amazon Devoluciones</p>
+            <p>Precio del pale {{item.precio}} €</p>
+            <a
+            [routerLink]="item.vendido ? null : ['/pale-details', item.id]"
+            class="btn"
+            [ngClass]="{
+              'btn-primary': !item.vendido,
+              'btn-secondary': item.vendido,
+              'disabled': item.vendido,
+            }"
+            [attr.aria-disabled]="item.vendido ? true : null"
+            tabindex="-1">
+            {{ item.vendido ? 'Pale vendido' : 'Ver contenido' }}
+          </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

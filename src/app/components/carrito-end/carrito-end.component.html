@@ -1,0 +1,58 @@
+<div class="continer">
+
+   
+
+    <div class="text-center">
+        <h2>Opciones de Pago</h2>
+        <label for="paymentOptions"><strong>Seleccione método de pago:</strong></label>
+        <select id="paymentOptions" class="form-select text-center " [(ngModel)]="selectedOption" (change)="onOptionChange()" style="max-width: 300px; width: 100%; margin: 10px auto; padding: 5px;" >
+          <option value="" disabled selected>-- Seleccione --</option>
+          <option value="bizzum">Bizum</option>
+          <option value="transferencia">Transferencia</option>
+        </select>
+      
+        <div *ngIf="selectedOption === 'bizzum'" class="payment-details ">
+          <p><strong>Número Bizum:</strong></p>
+          <p>+34 660 76 68 65</p>
+        </div>
+      
+        <div *ngIf="selectedOption === 'transferencia'" class="payment-details">
+          <p><strong>Número IBAN:</strong></p>
+          <p>ES91 2100 0418 1234 5678 9012</p>
+        </div>
+      </div>
+    <form action="" class="form text-center" >
+
+        <fieldset class="text-center">
+            <legend>Datos</legend>
+
+            <label for="nombre">Nombre</label>
+            <input type="text" placeholder="nombre" required class="form-control text-center mb-4">
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" placeholder="Apellidos" required class="form-control text-center mb-4">
+
+            <label for="nif">NIF/CIF/NIE </label>
+            <input type="text" placeholder="Numero NIF/CIF/NIE " required class="form-control text-center mb-4">
+
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" placeholder="Teléfono" required class="form-control text-center mb-4" > 
+
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" required class="form-control text-center mb-4">
+
+            <label for="poblacion">Población</label>
+            <input type="text" required class="form-control text-center mb-4">
+
+            <label for="provincia"> Provincia</label>
+            <input type="text" required class="form-control text-center mb-4">
+
+            <label for="notas">Notas del pedido (opcional)</label>
+            <textarea name="notas" id="notas"  class="form-control text-center mb-4" placeholder="Notas sore tu pedido , notas especiales para la entrega"></textarea >
+        </fieldset>
+
+      
+        <button class="btn btn-primary"> Enviar</button>
+    </form>
+</div>

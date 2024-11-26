@@ -3,13 +3,14 @@ import { Pale } from "./pale.model";
 export const pales: Array<Pale> = [
 
   {
-    vendido:false,
+    vendido:true,
     priceId:'4545',
-    destacado:true,
+    destacado:false,
     id: 1,
     nombre: 'Palé de Teles',
     productos: 23,
     precio: 2000 ,
+    categoria:'outlet',
     items: [
       {
         
@@ -23,7 +24,6 @@ export const pales: Array<Pale> = [
         TOTALCOST: 1078.0,
       },
       {
-
         DEPARTMENT: "Home Entertainment",
         CATEGORY: "Televisions",
         SUBCATEGORY: "TVs 51\"-60\"",
@@ -34,7 +34,6 @@ export const pales: Array<Pale> = [
         TOTALCOST: 912.52
       },
       {
-
         DEPARTMENT: "Home Entertainment",
         CATEGORY: "Televisions",
         SUBCATEGORY: "TVs 51\"-60\"",
@@ -44,13 +43,10 @@ export const pales: Array<Pale> = [
         TOTALRETAIL: 1044.5,
         TOTALCOST: 835.6
       },
-
-
-
     ]
   },
   {
-    vendido:false,
+    vendido:true,
     priceId:'48',
     destacado:true,
     id: 2,
@@ -94,7 +90,7 @@ export const pales: Array<Pale> = [
   },
   {
     destacado:true,
-    vendido:false,
+    vendido:true,
     priceId:'47',
     id: 3,
     nombre: 'Palé de Electrodomésticos',
@@ -246,6 +242,89 @@ export const pales: Array<Pale> = [
     }
     ]
   },
+  {
+    vendido: false,
+    priceId: "3475",
+    destacado: true,
+    id: 5,
+    nombre: "Pale 2",
+    productos: 4,
+    precio: 249,
+    categoria: "seasonal",
+    items: [
+      {
+        DEPARTMENT: "Home Entertainment",
+        CATEGORY: "Televisions",
+        SUBCATEGORY: "TVs 51\"-60\"",
+        ASIN: "B09W6CRR47",
+        ItemDesc: "LG 65UR73006LA 65\", 4K UHD, Smart TV, HDR10, Serie 73, Procesador Alta Potencia, Dolby Digital Plus, Alexa/Google Assistant",
+        COST: 818.43,
+        TOTALRETAIL: 1023.04,
+        TOTALCOST: 818.43
+      },
+      {
+        DEPARTMENT: "Home Entertainment",
+        CATEGORY: "Televisions",
+        SUBCATEGORY: "TVs 51\"-60\"",
+        ASIN: "B0C2V4B2BB",
+        ItemDesc: "LG 65UR73006LA 65\", 4K UHD, Smart TV, HDR10, Serie 73, Procesador Alta Potencia, Dolby Digital Plus, Alexa/Google Assistant",
+        COST: 782.83,
+        TOTALRETAIL: 978.54,
+        TOTALCOST: 782.83
+      },
+      {
+        DEPARTMENT: "Home Entertainment",
+        CATEGORY: "Televisions",
+        SUBCATEGORY: "TVs 51\"-60\"",
+        ASIN: "B0B1GX2VST",
+        ItemDesc: "LG 65UR73006LA 65\", 4K UHD, Smart TV, HDR10, Serie 73, Procesador Alta Potencia, Dolby Digital Plus, Alexa/Google Assistant",
+        COST: 767.25,
+        TOTALRETAIL: 962.25,
+        TOTALCOST: 767.25
+      }
+    ]
+  },
+  {
+    vendido: false,
+    priceId: "4593",
+    destacado: false,
+    id: 6,
+    nombre: "Pale 3",
+    productos: 4,
+    precio: 225,
+    items: [
+      {
+        DEPARTMENT: "Home Entertainment",
+        CATEGORY: "Televisions",
+        SUBCATEGORY: "TVs 51\"-60\"",
+        ASIN: "B08Y3ZQB8T",
+        ItemDesc: "LG 65UR73006LA 65\", 4K UHD, Smart TV, HDR10, Serie 73, Procesador Alta Potencia, Dolby Digital Plus, Alexa/Google Assistant",
+        COST: 912.52,
+        TOTALRETAIL: 1140.65,
+        TOTALCOST: 912.52
+      },
+      {
+        DEPARTMENT: "Home Entertainment",
+        CATEGORY: "Televisions",
+        SUBCATEGORY: "TVs 51\"-60\"",
+        ASIN: "B096Y53XL2",
+        ItemDesc: "LG 65UR73006LA 65\", 4K UHD, Smart TV, HDR10, Serie 73, Procesador Alta Potencia, Dolby Digital Plus, Alexa/Google Assistant",
+        COST: 835.6,
+        TOTALRETAIL: 1044.5,
+        TOTALCOST: 835.6
+      },
+      {
+        DEPARTMENT: "Home Entertainment",
+        CATEGORY: "Home Theater Projectors",
+        SUBCATEGORY: "Home Theater Projectors",
+        ASIN: "B084LJXLL2",
+        ItemDesc: "LG 65UR73006LA 65\", 4K UHD, Smart TV, HDR10, Serie 73, Procesador Alta Potencia, Dolby Digital Plus, Alexa/Google Assistant",
+        COST: 1078.0,
+        TOTALRETAIL: 1230.31,
+        TOTALCOST: 1078.0
+      }
+    ]
+  }
   
 ]
 

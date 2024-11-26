@@ -3,7 +3,7 @@ import { Route, Router, RouterLink } from '@angular/router';
 import { PaleService } from '../../services/pales.service';
 import { Pale } from '../../models/pale.model';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-carrito-details',
   standalone: true,
-  imports: [RouterLink, CommonModule,ReactiveFormsModule ],
+  imports: [RouterLink, CommonModule,ReactiveFormsModule ,FormsModule],
   templateUrl: './carrito-details.component.html',
   styleUrl: './carrito-details.component.css'
 })
@@ -117,18 +117,26 @@ export class CarritoDetailsComponent implements OnInit {
 
  
 
-  pagoRealizado(){
+//  pagoRealizado(){
 
-    for (let i = 0; i < this.pale.length; i++) {
+//    for (let i = 0; i < this.pale.length; i++) {
       // Asegúrate de que pale[i].precio es un número y suma el precio base
-      this.pale[i].vendido=true;
+   //   this.pale[i].vendido=true;
       
-      
-    }
+ //   }
     
-    this.carritoService.limpiarCarrito()
+ //   this.carritoService.limpiarCarrito()
     
     
-  }
+////  }
   
+
+
+
+selectedOption: string = ''; // Almacena la opción seleccionada
+
+onOptionChange(): void {
+  // Se puede agregar lógica adicional si es necesario
+  console.log(`Opción seleccionada: ${this.selectedOption}`);
+}
 }

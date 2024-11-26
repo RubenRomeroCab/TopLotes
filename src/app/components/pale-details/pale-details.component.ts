@@ -31,7 +31,7 @@ export class PaleDetailsComponent implements OnInit {
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
     const id = Number(idParam );
-    this.pale = pales.find((p) => p.id ===id);
+    this.pale = pales.find((pales) => pales.id ===id);
     
     console.log(this.pale);
     console .log (id, idParam)

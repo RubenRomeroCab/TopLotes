@@ -57,15 +57,83 @@
               total</small>
           </h1>
           <ul class="list-unstyled mt-3 mb-4 text-center">
-            <li>Subtotal: {{ precioTotalConIVA | currency: 'EUR': 'symbol' }} (sin impuestos)</li>
             <li>Total con IVA incluido del 21%: {{ precioTotalConIVA | currency: 'EUR': 'symbol' }}</li>
           </ul>
         </div>
-        <div class="d-flex justify-content-center mt-4 mb-3">
-          <button [disabled]="pale.length === 0" target="_blank" href="https://buy.stripe.com/test_28ocPGcbA0JE9BC9AD" (click)="pagoRealizado()"
+        <div class="">
+
+          <div class="text-center">
+            <h2>Opciones de Pago</h2>
+            <label for="paymentOptions"><strong>Seleccione método de pago:</strong></label>
+            <select id="paymentOptions" class="form-select text-center " [(ngModel)]="selectedOption" (change)="onOptionChange()" style="max-width: 300px; width: 100%; margin: 10px auto; padding: 5px;" >
+              <option value="" disabled selected>-- Seleccione --</option>
+              <option value="bizzum">Bizum</option>
+              <option value="transferencia">Transferencia</option>
+            </select>
+          
+            <div *ngIf="selectedOption === 'bizzum'" class="payment-details ">
+              <p><strong>Número Bizum:</strong></p>
+              <p>+34 660 76 68 65</p>
+            </div>
+          
+            <div *ngIf="selectedOption === 'transferencia'" class="payment-details">
+              <p><strong>Número IBAN:</strong></p>
+              <p>ES91 2100 0418 1234 5678 9012</p>
+            </div>
+          </div>
+        <form action="" class="form text-center" >
+    
+            <fieldset class="text-center">
+                <legend>Datos</legend>
+    
+                <label for="nombre">Nombre</label>
+                <input type="text" placeholder="nombre" required class="form-control text-center mb-4" >
+    
+                <label for="apellidos">Apellidos</label>
+                <input type="text" placeholder="Apellidos" required class="form-control text-center mb-4">
+    
+                <label for="nif">NIF/CIF/NIE </label>
+                <input type="text" placeholder="Numero NIF/CIF/NIE " required class="form-control text-center mb-4">
+    
+    
+                <label for="telefono">Teléfono</label>
+                <input type="tel" placeholder="Teléfono" required class="form-control text-center mb-4" > 
+    
+                <label for="email">Email</label>
+                <input type="email" placeholder="Email" required class="form-control text-center mb-4">
+    
+                <label for="poblacion">Población</label>
+                <input type="text" required class="form-control text-center mb-4">
+    
+                <label for="provincia"> Provincia</label>
+                <input type="text" required class="form-control text-center mb-4">
+    
+                <label for="notas">Notas del pedido (opcional)</label>
+                <textarea name="notas" id="notas"  class="form-control text-center mb-4" placeholder="Notas sore tu pedido , notas especiales para la entrega"></textarea >
+            </fieldset>
+    
+           <div class="d-flex justify-content-center mt-4 mb-3">
+          <button [disabled]="pale.length === 0"  
             class="btn btn-primary mx-auto col-lg-8">Realizar el pago</button>
         </div>
+        </form>
+
+
+
+
+        </div>
+       
       </div>
+    </div>
+
+    <div class="">
+      <p class="text-center mt-5">
+        Si tienes alguna duda con la forma de pago o podemos ayudarte con alguna consulta, no dudes en contactar con nosotros en nuestra sección de contacto o enviándonos un mensaje por WhatsApp. 
+        <br><br>
+        <a href="https://wa.me/34123456789" class="btn btn-success" target="_blank">
+          Enviar mensaje por WhatsApp
+        </a>
+      </p>
     </div>
   
     <div class="mt-5 text-center bg-body-tertiary rounded-4 mb-5">
