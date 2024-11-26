@@ -81,35 +81,37 @@
               <p>ES91 2100 0418 1234 5678 9012</p>
             </div>
           </div>
-        <form action="" class="form text-center" >
+        <form (ngSubmit)="enviar(form)" #form="ngForm" class="form text-center" >
     
             <fieldset class="text-center">
                 <legend>Datos</legend>
     
                 <label for="nombre">Nombre</label>
-                <input type="text" placeholder="nombre" required class="form-control text-center mb-4" >
+                <input type="text" placeholder="nombre"  required class="form-control text-center mb-4" [(ngModel)]="formData.nombre" id="nombre" name="nombre">
     
                 <label for="apellidos">Apellidos</label>
-                <input type="text" placeholder="Apellidos" required class="form-control text-center mb-4">
+                <input type="text" placeholder="Apellidos" required class="form-control text-center mb-4" [(ngModel)]="formData.apellido" id="apellido" name="apellido">
     
                 <label for="nif">NIF/CIF/NIE </label>
-                <input type="text" placeholder="Numero NIF/CIF/NIE " required class="form-control text-center mb-4">
+                <input type="text" placeholder="Numero NIF/CIF/NIE " required class="form-control text-center mb-4"  [(ngModel)]="formData.nif" id="nif" name="nif">
     
     
                 <label for="telefono">Teléfono</label>
-                <input type="tel" placeholder="Teléfono" required class="form-control text-center mb-4" > 
+                <input type="tel" placeholder="Teléfono" required class="form-control text-center mb-4" [(ngModel)]="formData.telefono" id="telefono" name="telefono"> 
     
                 <label for="email">Email</label>
-                <input type="email" placeholder="Email" required class="form-control text-center mb-4">
+                <input type="email" placeholder="Email" required class="form-control text-center mb-4" [(ngModel)]="formData.email" id="email" name="email">
     
                 <label for="poblacion">Población</label>
-                <input type="text" required class="form-control text-center mb-4">
+                <input type="text" required class="form-control text-center mb-4" [(ngModel)]="formData.poblacion" id="poblacion" name="poblacion">
     
                 <label for="provincia"> Provincia</label>
-                <input type="text" required class="form-control text-center mb-4">
+                <input type="text" required class="form-control text-center mb-4" [(ngModel)]="formData.provincia" id="provincia" name="provincia">
     
                 <label for="notas">Notas del pedido (opcional)</label>
-                <textarea name="notas" id="notas"  class="form-control text-center mb-4" placeholder="Notas sore tu pedido , notas especiales para la entrega"></textarea >
+                <textarea name="notas" id="notas"  class="form-control text-center mb-4" placeholder="Notas sore tu pedido , notas especiales para la entrega" [(ngModel)]="formData.notas" ></textarea >
+
+                <input type="hidden" name="paleId" [(ngModel)]="formData.paleIds">
             </fieldset>
     
            <div class="d-flex justify-content-center mt-4 mb-3">
