@@ -34,6 +34,7 @@ export class CarritoDetailsComponent implements OnInit {
     provincia: '',
     notas: '',
     paleIds: [] as number[],
+    metodoPago:'',
   };
 
   checkoutForm: any;
