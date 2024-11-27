@@ -5,3 +5,10 @@
     border-radius: 15px;
     text-align: center;
 }
+
+@media(max-width:600px){
+    .bg{
+        width: 320px;
+        height: 615px;
+    }
+}
