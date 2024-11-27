@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TopLotes:build:production"
+              "buildTarget": "toplotes:build:production"
             },
             "development": {
-              "buildTarget": "TopLotes:build:development"
+              "buildTarget": "toplotes:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -47,8 +47,6 @@ export class CarritoDetailsComponent implements OnInit {
               private pagos:PagosService) { }
 
 
-
-
   ngOnInit(): void {
     this.pale = this.carritoService.mostrarcarrtito();
     console.log(this.pale);
@@ -61,9 +59,6 @@ export class CarritoDetailsComponent implements OnInit {
       }
     })
   }
-
-
-
 
 
   borrarPale(event: Event, idPale: number) {
@@ -133,7 +128,6 @@ export class CarritoDetailsComponent implements OnInit {
   }
 
   enviar(form: NgForm) {
-
     if (form.invalid) {
       console.log("ERROR");
     } else {
