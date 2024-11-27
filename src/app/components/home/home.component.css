@@ -61,4 +61,9 @@
     h1 {
         font-size: 24px !important; /* Ajusta el tamaño del encabezado */
     }
+
+    .img-intro{
+        max-width: 300px;
+        border-radius: 20px;
+    }
 }
