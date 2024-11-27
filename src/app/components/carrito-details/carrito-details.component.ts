@@ -135,6 +135,7 @@ export class CarritoDetailsComponent implements OnInit {
       this.pagos.enviarFormulario(form);
       this.pagoRealizado();
       form.reset();
+      alert("Pedido realizado, nos pondremos en contacto contigo.")
     }
   }
 

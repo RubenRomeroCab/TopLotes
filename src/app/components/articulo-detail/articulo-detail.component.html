@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <!-- Tarjeta de producto -->
+    <div *ngIf="articulo">
+      <div class="row featurette align-items-center">
+        <!-- Contenido de texto (izquierda) -->
+        <div class="col-md-7 order-md-2 bg  ms-4">
+          <h2 class="featurette-heading fw-normal lh-1 mt-5">{{ articulo.nombre }}</h2>
+          <p class="lead"><strong>Precio:</strong>  <strong>{{ articulo.precio }}€</strong></p>
+          <p><span class="badge bg-success">Disponible</span></p>
+          <button (click)="mostrarMensaje()" class="btn btn-primary mb-3">Comprar</button>
+          <p class=""><strong>Artículo revisado y en perfecto estado.</strong> Este producto ha sido cuidadosamente inspeccionado y está completamente funcional,
+             con todos sus componentes en óptimas condiciones. No presenta ningún daño o desgaste visible y 
+             se encuentra listo para su uso inmediato. Ideal para quienes buscan calidad y fiabilidad. ¡Una excelente oportunidad de compra!
+        </p>
+
+        <p *ngIf="mostrar" class="text-danger">Actualmente estamos trabajando en la seccion de pagos</p>
+        </div>
+  
+        <!-- Imagen del producto (derecha) -->
+        <div class="col-md-5 order-md-1 mt-2 mb-4 ">
+            <div class="img-container" style="width: 100%; height: 600px; overflow: hidden;">
+              <img [src]="articulo.img" class="img-fluid rounded-3" alt="{{ articulo.nombre }}" style="width: 100%; height: 100%; object-fit:fluid;" />
+            </div>
+          </div>
+      </div>
+
+
+    </div>
+
+      <!-- Información adicional debajo de la tarjeta -->
+      <div class="mt-5 text-center p-4 bg-light rounded-3  mb-3">
+        <p><strong>Si tienes alguna duda, puedes contactar con nuestro soporte.</strong></p>
+        <p>Nuestro equipo está disponible para ayudarte en cualquier momento. Si necesitas más información o tienes alguna pregunta, no dudes en ponerte en contacto con nosotros.</p>
+        <a href="mailto:support@tusitioweb.com" class="btn btn-outline-primary">Contactar con soporte</a>
+      </div>
+  </div>

@@ -10,12 +10,14 @@ import { OutletComponent } from './components/categorias/outlet/outlet.component
 import { HerramientasComponent } from './components/categorias/herramientas/herramientas.component';
 import { InformaticaComponent } from './components/categorias/informatica/informatica.component';
 import { ArticulosComponent } from './components/articulos/articulos.component';
+import { ArticuloDetailComponent } from './components/articulo-detail/articulo-detail.component';
 
 
 
 export const routes: Routes = [
     {path: '', redirectTo: '/inicio', pathMatch: 'full' },
     {path:'articulos',component:ArticulosComponent},
+    {path:'articulo-detail/:id',component:ArticuloDetailComponent},
     {path:'informatica',component:InformaticaComponent},
     {path:'herramientas',component:HerramientasComponent},
     {path:'outlet',component:OutletComponent},

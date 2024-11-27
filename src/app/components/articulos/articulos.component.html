@@ -16,9 +16,9 @@
                 <img [src]="item.img" class="card-img-top" alt="..."  style="height: 300px; width: 100%; object-fit: contain;">
                 <div class="card-body">
                     <h5 class="card-title" > {{truncateText(item.nombre,90)}}</h5>
-                    <p class="card-text">Revisado</p>
-                    <p>{{item.precio}} €</p>
-                    <a href="#" class="btn btn-primary">Comprar</a>
+                    <p class="badge bg-success">Revisado</p>
+                    <p> <strong>Precio</strong> {{item.precio}} €</p>
+                    <button (click)="verArticulo(item.id)" class="btn btn-primary">Ver más...</button>
                 </div>
             </div>
         </div>
