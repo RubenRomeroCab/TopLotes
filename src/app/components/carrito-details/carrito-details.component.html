@@ -104,76 +104,76 @@
         <fieldset class="text-center">
           <legend>Datos</legend>
 
-          <label for="nombre">Nombre</label>
           <input
             type="text"
-            placeholder="nombre"
+            placeholder="Nombre"
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom "
             [(ngModel)]="formData.nombre"
             id="nombre"
             name="nombre"
           />
 
-          <label for="apellidos">Apellidos</label>
+       
           <input
             type="text"
             placeholder="Apellidos"
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             [(ngModel)]="formData.apellido"
             id="apellido"
             name="apellido"
           />
 
-          <label for="nif">NIF/CIF/NIE </label>
-          <input
+        
+          <input 
+       
             type="text"
             placeholder="Numero NIF/CIF/NIE "
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             [(ngModel)]="formData.nif"
             id="nif"
             name="nif"
           />
 
-          <label for="telefono">Teléfono</label>
+         
           <input
             type="tel"
             placeholder="Teléfono"
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             [(ngModel)]="formData.telefono"
             id="telefono"
             name="telefono"
           />
 
-          <label for="email">Email</label>
           <input
             type="email"
             placeholder="Email"
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             [(ngModel)]="formData.email"
             id="email"
             name="email"
           />
 
-          <label for="poblacion">Población</label>
           <input
+          placeholder="Población"
             type="text"
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             [(ngModel)]="formData.poblacion"
             id="poblacion"
             name="poblacion"
           />
 
-          <label for="provincia">Provincia</label>
+        
           <input
+          placeholder="Provincia"
             type="text"
             required
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             [(ngModel)]="formData.provincia"
             id="provincia"
             name="provincia"
@@ -183,7 +183,7 @@
           <textarea
             name="notas"
             id="notas"
-            class="form-control text-center mb-4"
+            class="form-control text-center mb-4 input-custom"
             placeholder="Notas sobre tu pedido, notas especiales para la entrega"
             [(ngModel)]="formData.notas"
           ></textarea>
@@ -197,6 +197,12 @@
             name="metodoPago"
           />
 
+
+          <input
+          type="hidden"
+          [(ngModel)]="formData.pagoTotal"
+          name="pagototal"
+        />
           <div class="d-flex justify-content-center mt-4 mb-3">
             <button
               [disabled]="pale.length === 0 || !form.valid"
@@ -224,7 +230,7 @@
     </p>
   </div>
 
-  <div class="mt-5 text-center bg-body-tertiary rounded-4 mb-5">
+  <div class="mt-5 text-center bg-body rounded-4 mb-5">
     <img src="repart2.png" alt="" />
     <h1 class="text-body-emphasis">
       ¡No te Pierdas Nuestras Ofertas Exclusivas!

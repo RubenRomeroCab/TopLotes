@@ -1,5 +1,64 @@
-
-.bg{
-    background-color: rgb(234, 237, 240) ;
+.bg {
+  background-color: rgba(194, 217, 228, 0.74);
+}
+.featurette-heading-intro{
+  font-size: 3rem; /* Tamaño grande */
+  font-weight: 700px; /* Negrita */
+  text-align: center; /* Opcional, para centrarlo */
+  color: #181818; /* Azul corporativo */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
+.logo{
+    margin-left: 10px;
+}
+
+
+
+
+@media (max-width: 600px) {
+    /* Cambiar la disposición de los botones a columna */
+    .d-inline-flex {
+        flex-direction: column; /* Cambiar los botones a columna */
+        align-items: center; /* Centrar los botones */
+        justify-content: center; /* Asegurarse de que los botones estén centrados horizontalmente */
+        width: 100%; /* Asegurarse de que el contenedor ocupe todo el ancho */
+        margin-left: 0; /* Eliminar márgenes a la izquierda */
+        margin-right: 0; /* Eliminar márgenes a la derecha */
+    }
+
+    /* Asegurarse de que el contenido dentro de los botones se mantenga en línea */
+    .btn .d-inline-flex {
+        flex-direction: row; /* Asegurar que los íconos y texto estén en línea */
+        align-items: center; /* Centrar el contenido dentro del botón */
+        justify-content: center; /* Asegurarse de que el contenido dentro del botón esté centrado */
+    }
+  
+    /* Hacer que los botones sean más pequeños */
+    .btn {
+        width: 100%; /* Los botones ocupan el 100% del ancho */
+        margin-bottom: 10px; /* Añadir margen entre botones */
+        text-align: center; /* Centrar el texto dentro de los botones */
+    }
+
+    /* Reducir tamaño de los íconos SVG pero mantenerlos en línea */
+    .btn svg {
+        height: 30px;
+        width: 30px;
+        margin-right: 8px; /* Separar un poco el icono del texto */
+    }
+
+    /* Ajustar el tamaño del texto en los botones */
+    .btn span {
+        font-size: 16px; /* Ajustar el tamaño del texto del botón */
+    }
+    .btn-sub{
+        width: 80%;
+    }
+    /* Reducir el tamaño del encabezado (si es necesario) */
+    h1 {
+        font-size: 24px !important; /* Ajusta el tamaño del encabezado */
+    }
+}

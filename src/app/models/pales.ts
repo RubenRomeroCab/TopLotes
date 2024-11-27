@@ -136,7 +136,7 @@ export const pales: Array<Pale> = [
     priceId:'46',
     destacado:true,
     id: 4,
-    nombre: 'Palé de Cocina',
+    nombre: 'Productos de Cocina ',
     productos: 10,
     precio: 2640,
     items: [

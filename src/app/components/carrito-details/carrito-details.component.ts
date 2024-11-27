@@ -5,6 +5,7 @@ import { Pale } from '../../models/pale.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PagosService } from '../../services/pagos.service';
 
 
 
@@ -35,18 +36,15 @@ export class CarritoDetailsComponent implements OnInit {
     notas: '',
     paleIds: [] as number[],
     metodoPago:'',
+    pagoTotal:0,
   };
 
   checkoutForm: any;
   elementoEliminado!: boolean;
   paleSelecionado !: number;
   constructor(private carritoService: PaleService,
-    private route: Router,
-
-
-
-
-  ) { }
+              private route: Router,
+              private pagos:PagosService) { }
 
 
 
@@ -103,15 +101,16 @@ export class CarritoDetailsComponent implements OnInit {
     for (let i = 0; i < this.pale.length; i++) {
       // Asegúrate de que pale[i].precio es un número y suma el precio base
       this.precioTotalConIVA += Number(this.pale[i].precio) || 0;
+      
     }
-    if (this.pale.length > 0) {
-
-    }
+    this.formData.pagoTotal = this.precioTotalConIVA * 1.21;
+  
 
   }
 
   pagoRealizado() {
 
+    
     for (let i = 0; i < this.pale.length; i++) {
       //Asegúrate de que pale[i].precio es un número y suma el precio base
       this.pale[i].vendido = true;
@@ -139,6 +138,7 @@ export class CarritoDetailsComponent implements OnInit {
       console.log("ERROR");
     } else {
       console.log(form.value);
+      this.pagos.enviarFormulario(form);
       this.pagoRealizado();
       form.reset();
     }

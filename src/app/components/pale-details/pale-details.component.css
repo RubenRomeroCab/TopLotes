@@ -4,9 +4,16 @@ ul{
     margin: 0; /* Elimina el margen predeterminado */
     padding: 0; /* Elimina el padding predeterminado */
 }
-.container{
-    font-size: 18px;
-}
+
 .bg{
-    background-color: rgb(222 232 243) ;
+    background-color: rgb(246, 246, 247) ;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: normal; /* O cualquier otro valor que prefieras */
+}
+
+/* Para eliminar el tamaño dinámico de los encabezados y asignar un tamaño fijo */
+ h2 {
+    font-size: 1.4rem; /* Puedes ajustarlo al tamaño que prefieras */
 }

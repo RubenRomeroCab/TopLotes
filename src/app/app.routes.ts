@@ -9,11 +9,13 @@ import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { OutletComponent } from './components/categorias/outlet/outlet.component';
 import { HerramientasComponent } from './components/categorias/herramientas/herramientas.component';
 import { InformaticaComponent } from './components/categorias/informatica/informatica.component';
+import { ArticulosComponent } from './components/articulos/articulos.component';
 
 
 
 export const routes: Routes = [
     {path: '', redirectTo: '/inicio', pathMatch: 'full' },
+    {path:'articulos',component:ArticulosComponent},
     {path:'informatica',component:InformaticaComponent},
     {path:'herramientas',component:HerramientasComponent},
     {path:'outlet',component:OutletComponent},

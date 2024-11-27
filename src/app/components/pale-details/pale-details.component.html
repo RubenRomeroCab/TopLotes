@@ -1,7 +1,10 @@
 <div class="container mt-4 mb-4 rounded-4  bg ">
     <div class="row featurette ">
+        <div *ngIf="alertMessage" class="alert alert-info text-center">
+            {{ alertMessage }}
+          </div>
         <div *ngIf="pale" class="col-md-7 order-md-2">
-            <h2 class="featurette-heading fw-normal lh-1 text-center mb-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
+            <h2 class="featurette-heading lh-1 text-center mb-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
                     [ Cantidad de productos {{ pale.productos}} ]</span></h2>
             <p class="lead">Palé de {{pale.nombre}} sin revisar procedente de Amazon Devoluciones</p>
             <ul class="list-unstyled">
@@ -25,9 +28,7 @@
          
             </div>
         </div>
-        <div *ngIf="alertMessage" class="alert alert-info text-center">
-            {{ alertMessage }}
-          </div>
+    
         <div class="col-md-5 order-md-1">
             <img  src="pale.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
                 height="500"role="img" >
