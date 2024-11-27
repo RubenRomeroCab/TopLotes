@@ -247,7 +247,7 @@ export const pales: Array<Pale> = [
     priceId: "3475",
     destacado: true,
     id: 5,
-    nombre: "Pale 2",
+    nombre: " Palé de Electrodomésticos",
     productos: 4,
     precio: 249,
     categoria: "seasonal",
@@ -289,7 +289,7 @@ export const pales: Array<Pale> = [
     priceId: "4593",
     destacado: false,
     id: 6,
-    nombre: "Pale 3",
+    nombre: " Palé de Electrodomésticos",
     productos: 4,
     precio: 225,
     items: [

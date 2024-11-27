@@ -30,7 +30,7 @@ export class BodyComponent {
   }
 
   verPale(id:number) {
-    this.router.navigate(['/pale-details',id])
+    this.router.navigate(['/pale-details',id]);
   }
   
 }
