@@ -22,11 +22,13 @@
                     <p>Tiempo de entrega estimado: 3 a 7 días</p>
                 </li>
             </ul>
-            <h3 class="text-center " > Precio total : {{pale.precio +(pale.precio * 0.21) }} € </h3>
+            <h3 class="text-center " > Precio total : {{pale.precio + (pale.precio * 0.21) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
             <button (click)="agregarAlCarrito(pale)"  class="btn btn-primary ">Añadir al carrito</button>
-         
+            <a class=" btn btn-primary ms-4" href="https://buy.stripe.com/test_3cs4jaa3s63YbJK006" target="_blank">Pagar por stripe</a>
             </div>
+
+            
         </div>
     
         <div class="col-md-5 order-md-1">

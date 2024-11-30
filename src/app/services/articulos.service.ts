@@ -10,8 +10,7 @@ export class ArticulosService {
 
   articulosCollection : any 
   constructor(private articuloService:Firestore) { 
-
-    this.articulosCollection = collection( this.articuloService,'productos');
+  this.articulosCollection = collection( this.articuloService,'productos');
   }
 
 

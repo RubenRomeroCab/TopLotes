@@ -132,7 +132,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
-    vendido:false,
+    vendido:true,
     priceId:'46',
     destacado:true,
     id: 4,
@@ -243,7 +243,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
-    vendido: false,
+    vendido: true,
     priceId: "3475",
     destacado: true,
     id: 5,
@@ -285,7 +285,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
-    vendido: false,
+    vendido: true,
     priceId: "4593",
     destacado: false,
     id: 6,
