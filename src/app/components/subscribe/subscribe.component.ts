@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-subscribe',
@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: './subscribe.component.html',
   styleUrl: './subscribe.component.css'
 })
-export class SubscribeComponent {
+export class SubscribeComponent implements OnInit {
+
+
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+ }
 
 }
