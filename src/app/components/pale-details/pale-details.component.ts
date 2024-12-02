@@ -42,6 +42,8 @@ export class PaleDetailsComponent implements OnInit {
         setTimeout(() => this.alertMessage = '', 5000); // Ocultar alerta después de 3 segundos
       })
     );
+
+    window.scrollTo(0, 0);
   }
 
   

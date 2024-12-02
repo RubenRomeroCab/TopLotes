@@ -1,11 +1,14 @@
 .bg-custom {
   background: linear-gradient(to bottom right, #b3e5fc, #ffffff);
-
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+ 
 }
 
 .text {
   font-family: "Montserrat", sans-serif;
- 
+  flex: 1;
 }
 
 @media (max-width: 600px) {

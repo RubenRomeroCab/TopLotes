@@ -243,7 +243,7 @@ export const pales: Array<Pale> = [
     ]
   },
   {
-    vendido: true,
+    vendido: false,
     priceId: "3475",
     destacado: true,
     id: 5,
