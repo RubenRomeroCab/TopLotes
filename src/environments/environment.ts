@@ -1,5 +1,13 @@
 export const environment = {
-    fireconfig: { "projectId": "toplotes-305cb", "appId": "1:888938502847:web:c4bdb3b36483572a8bc40a", "storageBucket": "toplotes-305cb.firebasestorage.app", "apiKey": "AIzaSyDj9W6O4pe-aDx0LyZl9yBvlmnvq2eP-40", "authDomain": "toplotes-305cb.firebaseapp.com", "messagingSenderId": "888938502847", "measurementId": "G-42D90TP1GQ" }
+    fireconfig: {
+        apiKey: "AIzaSyByHgEqGLAcsXy0zRlj26-uvdlAK7iYpCQ",
+        authDomain: "toplotes-2df3c.firebaseapp.com",
+        projectId: "toplotes-2df3c",
+        storageBucket: "toplotes-2df3c.firebasestorage.app",
+        messagingSenderId: "291057431106",
+        appId: "1:291057431106:web:3fa6529e34adfea082f3db",
+        measurementId: "G-17VJRVN3X6"
+      }
 
 
 };
