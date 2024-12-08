@@ -25,10 +25,11 @@
             <h3 class="text-center " > Precio total : {{pale.precio + (pale.precio * 0.21) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
             <button (click)="agregarAlCarrito(pale)" disabled  class="btn btn-primary ">Añadir al carrito</button>
+            
             <a disabled  class=" btn btn-primary ms-4"  href="{{pale.link}}" target="_blank">Pagar por stripe</a>
             </div>
 
-            
+            <p class="text-danger text-center" >El método de pago es de prueba; no se realizará ningún cargo.</p>
         </div>
     
         <div class="col-md-5 order-md-1">
