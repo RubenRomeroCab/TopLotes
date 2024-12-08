@@ -6,9 +6,14 @@
     text-align: center;
 }
 
-@media(max-width:600px){
-    .bg{
-        width: 360px;
-        height: 650px;
+@media (max-width: 600px) {
+    .bg {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .img-container {
+        height: 250px; /* Ajusta la altura de la imagen en móviles */
     }
 }
