@@ -4,7 +4,7 @@
             {{ alertMessage }}
           </div>
         <div *ngIf="pale" class="col-md-7 order-md-2">
-            <h2 class="featurette-heading lh-1 text-center mb-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
+            <h2 class="featurette-heading lh-1 text-center mb-3 mt-3">{{pale.nombre}} <span class="text-body-secondary"><br><br>
                     [ Cantidad de productos {{ pale.productos}} ]</span></h2>
             <p class="lead">Palé de {{pale.nombre}} sin revisar procedente de Amazon Devoluciones</p>
             <ul class="list-unstyled">
@@ -15,7 +15,7 @@
                     <p>Valor total: {{pale.precio}}€</p>
                 </li>
                 <li>
-                    <p>Precio total: {{pale.precio}} + Iva de 21%  <br> Total:  {{pale.precio +(pale.precio * 0.21) }} €</p>
+                    <p>Precio total: {{pale.precio }}€ + Iva de 21%  <br> Total:  {{pale.precio +(pale.precio * 0.21) }} €</p>
                    
                 </li>
                 <li>
@@ -24,15 +24,15 @@
             </ul>
             <h3 class="text-center " > Precio total : {{pale.precio + (pale.precio * 0.21) }} € </h3>
             <div class="d-flex justify-content-center mt-4 mb-4">
-            <button (click)="agregarAlCarrito(pale)"  class="btn btn-primary ">Añadir al carrito</button>
-            <a class=" btn btn-primary ms-4" href="https://buy.stripe.com/test_3cs4jaa3s63YbJK006" target="_blank">Pagar por stripe</a>
+            <button (click)="agregarAlCarrito(pale)" disabled  class="btn btn-primary ">Añadir al carrito</button>
+            <a disabled  class=" btn btn-primary ms-4"  href="{{pale.link}}" target="_blank">Pagar por stripe</a>
             </div>
 
             
         </div>
     
         <div class="col-md-5 order-md-1">
-            <img  src="pale.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
+            <img  [src]="pale?.img" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid rounded-4 mt-4 ms-auto" width="450"
                 height="500"role="img" >
                 <title>Placeholder</title>
         </div>
@@ -40,6 +40,8 @@
     
       <h2 class="text-center mt-5">Descripción y valor del producto</h2>
       <div *ngIf="pale">
+
+        <!--Tenemos el asin la descrpcion de item el precio total y la categoria-->
     <li *ngFor="let item of pale.items" class="list-unstyled text-center " >
         <ul >
             <p>

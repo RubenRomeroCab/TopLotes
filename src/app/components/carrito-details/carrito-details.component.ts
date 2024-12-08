@@ -49,7 +49,7 @@ export class CarritoDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.pale = this.carritoService.mostrarcarrtito();
-    console.log(this.pale);
+   
 
     this.precioFinalCompra();
     this.setPaleIdFromCart();
@@ -131,7 +131,7 @@ export class CarritoDetailsComponent implements OnInit {
     if (form.invalid) {
       console.log("ERROR");
     } else {
-      console.log(form.value);
+   
       this.pagos.enviarFormulario(form);
       this.pagoRealizado();
       form.reset();
@@ -143,7 +143,6 @@ export class CarritoDetailsComponent implements OnInit {
     if (this.pale.length > 0) {
       // Si hay palés en el carrito, obtenemos los IDs de todos los palés
       this.formData.paleIds = this.pale.map(pale => pale.id);  // Extraemos los IDs de los palés
-      console.log('IDs de palés asignados:', this.formData.paleIds);
     }
   }
 }

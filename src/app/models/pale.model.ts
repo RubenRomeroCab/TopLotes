@@ -1,6 +1,7 @@
 import { Item } from "./item.model";
 
 export interface Pale{
+    img:string;
     vendido:boolean;
     priceId:string;
     destacado?:boolean,
@@ -10,5 +11,6 @@ export interface Pale{
     precio: number,
     items: Item [],
     categoria?:string;
+    link:string,
 
 }

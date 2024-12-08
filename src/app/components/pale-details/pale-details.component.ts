@@ -33,8 +33,7 @@ export class PaleDetailsComponent implements OnInit {
     const id = Number(idParam );
     this.pale = pales.find((pales) => pales.id ===id);
     
-    console.log(this.pale);
-    console .log (id, idParam)
+    
 
     this.subscription.add(
       this.servicioPale.alerta$.subscribe(message => {
@@ -49,7 +48,6 @@ export class PaleDetailsComponent implements OnInit {
   
   agregarAlCarrito(pale:Pale){
       this.servicioPale.agregarPale(pale)
-      console.log(this.servicioPale.mostrarcarrtito())
       
   }
 

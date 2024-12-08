@@ -63,7 +63,7 @@
         <div  *ngFor="let item of paleDestacado"  class="col-lg-4 col-md-6 mb-4 ">
           <div *ngIf="paleDestacado" (click)="mirarPale(item)" class="card bg " >
             <img 
-            [src]="item.vendido ? 'vendido.png' : 'pale.jpg'"
+            [src]=item.img
             data-holder-rendered="true"
             style="height: 300px; width: 100%; display: block;"
             alt="Imagen del pale">

@@ -23,7 +23,6 @@ export class NavComponent implements OnInit {
     // Suscripción al Observable del precio total con IVA
     this.carritoService.getPrecioTotalConIVA$().subscribe({
       next: (totalConIVA ) => {
-        console.log(totalConIVA)
         this.precioTotalConIVA =  totalConIVA+(totalConIVA *0.21) ;
       },
       error: (err) => console.error('Error al recibir el total con IVA:', err)

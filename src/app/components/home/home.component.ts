@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
     this.paleDestacado = pales.filter(pale => pale.destacado === true);
     
     // Verifica los resultados en la consola
-    console.log(this.paleDestacado);
   }
 
   mirarPale(pale:Pale){
@@ -32,8 +31,6 @@ export class HomeComponent implements OnInit {
   }
   
   verPale(id:number) {
-    
-    console.log(id)
       this.router.navigate(['/pale-details',id])
     }
     

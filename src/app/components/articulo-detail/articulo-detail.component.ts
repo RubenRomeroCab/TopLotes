@@ -26,7 +26,7 @@ export class ArticuloDetailComponent implements OnInit{
    if(this.id){
     this.articuloService.getProductoById(this.id).pipe(take(1)).subscribe(data =>{
     this.articulo = data;
-    console.log(this.articulo)
+   
     })
    }
    
