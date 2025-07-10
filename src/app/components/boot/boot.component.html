@@ -1,0 +1,24 @@
+
+
+   <img src="pngegg.png" alt="chat-boot" class="boot" (click)="abrir()"> 
+
+
+<img src="pngegg.png" alt="chat-boot" class="boot" (click)="abrir()">
+
+
+<div class="chat-window" *ngIf="chatAbierto">
+  <div class="chat-header">
+    ChatBot
+    <button class=" btn close-btn " (click)="abrir()">×</button>
+  </div>
+  <div class="chat-body">
+    <div *ngFor="let msg of mensajes" [class.usuario]="msg.esUsuario" [class.bot]="!msg.esUsuario">
+      {{ msg.texto }}
+    </div>
+  </div>
+
+  <div class="chat">
+    <input #inputMsg type="text" placeholder="Escribe un mensaje" (keyup.enter)="enviarMensaje(inputMsg.value); inputMsg.value = '';">
+    <button (click)="enviarMensaje(inputMsg.value); inputMsg.value = '';">Enviar</button>
+  </div>
+</div>
