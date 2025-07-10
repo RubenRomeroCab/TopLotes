@@ -5,6 +5,7 @@ import { pales } from '../../models/pales';
 import { CommonModule } from '@angular/common';
 import { PaleService } from '../../services/pales.service';
 import { Subscription } from 'rxjs';
+import { HistorialService } from '../../services/historial.service';
 
 @Component({
   selector: 'app-pale-details',
@@ -26,7 +27,8 @@ export class PaleDetailsComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute,
-              private servicioPale:PaleService,) {}
+              private servicioPale:PaleService,
+            private historialService:HistorialService) {}
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -42,6 +44,9 @@ export class PaleDetailsComponent implements OnInit {
       })
     );
 
+    if(this.pale){
+      this.historialService.guardarProducto(this.pale)
+    }
     window.scrollTo(0, 0);
   }
 
