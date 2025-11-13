@@ -1,15 +1,12 @@
-.boot{
-    width: 50px !important;
-    height: 50px !important;
-    float: right;
-    margin-right: 30px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    cursor: pointer;
+.boot {
+  width: 50px !important;
+  height: 50px !important;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
 }
-
 
 .chat-window {
   position: fixed;
@@ -34,12 +31,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.close-btn {
+  background-color: rgb(88, 146, 233);
+  color: white;
+  border: none;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.close-btn:hover {
+  background-color: rgb(62, 132, 211);
 }
 
 .chat-body {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-body div {
@@ -47,6 +67,7 @@
   margin-bottom: 8px;
   border-radius: 15px;
   max-width: 80%;
+  word-wrap: break-word;
 }
 
 .usuario {
@@ -85,17 +106,8 @@
   background-color: #0078d4;
   color: white;
   cursor: pointer;
-  
 }
 
-.chat button:hover{
-background-color: #135281;
-}
-
-.close-btn{
-    background-color: rgb(88, 146, 233);
-    color: white;
-}
-.close-btn:hover{
-    background-color: rgb(62, 132, 211);
+.chat button:hover {
+  background-color: #135281;
 }

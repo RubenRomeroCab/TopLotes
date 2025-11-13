@@ -7,6 +7,7 @@ export const environment = {
         messagingSenderId: "291057431106",
         appId: "1:291057431106:web:3fa6529e34adfea082f3db",
         measurementId: "G-17VJRVN3X6"
-      }
+      },
+        openaiApiKey: 'TU_API_KEY_OPENAI_AQUI'  // <-- agrega esto
 
 };

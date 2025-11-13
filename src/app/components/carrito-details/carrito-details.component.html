@@ -100,119 +100,110 @@
           <p>ES91 2100 0418 1234 5678 9012</p>
         </div>
       </div>
-      <form (ngSubmit)="enviar(form)" #form="ngForm" class="form text-center">
-        <fieldset class="text-center">
-          <legend>Datos</legend>
+     <form (ngSubmit)="enviar(form)" #form="ngForm" class="form text-center">
+  <fieldset class="text-center">
+    <legend>Datos del Pedido</legend>
 
-          <input
-            type="text"
-            placeholder="Nombre"
-            required
-            class="form-control text-center mb-4 input-custom "
-            [(ngModel)]="formData.nombre"
-            id="nombre"
-            name="nombre"
-          />
+    <!-- Nombre -->
+    <input type="text" placeholder="Nombre"
+           name="nombre" required
+           [(ngModel)]="formData.nombre"
+           #nombre="ngModel"
+           class="form-control text-center mb-4 input-custom" />
+    <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">
+      <span *ngIf="nombre.errors?.['required ']">El nombre es obligatorio</span>
+    </div>
 
-       
-          <input
-            type="text"
-            placeholder="Apellidos"
-            required
-            class="form-control text-center mb-4 input-custom"
-            [(ngModel)]="formData.apellido"
-            id="apellido"
-            name="apellido"
-          />
+    <!-- Apellidos -->
+    <input type="text" placeholder="Apellidos"
+           name="apellido" required
+           [(ngModel)]="formData.apellido"
+           #apellido="ngModel"
+           class="form-control text-center mb-4 input-custom" />
+    <div *ngIf="apellido.invalid && apellido.touched" class="text-danger">
+      <span *ngIf="apellido.errors?.['required ']">Los apellidos son obligatorios</span>
+    </div>
 
-        
-          <input 
-       
-            type="text"
-            placeholder="Numero NIF/CIF/NIE "
-            required
-            class="form-control text-center mb-4 input-custom"
-            [(ngModel)]="formData.nif"
-            id="nif"
-            name="nif"
-          />
+  <div *ngIf="nif.invalid && nif.touched" class="text-danger mb-1">
+  <span *ngIf="nif.errors?.['required']">El NIF es obligatorio</span>
+  <span *ngIf="nif.errors?.['pattern']">Introduce un NIF/CIF/NIE válido</span>
+</div>
+<input type="text" placeholder="NIF/CIF/NIE"
+       name="nif" required
+       [(ngModel)]="formData.nif"
+       #nif="ngModel"
+       pattern="[0-9A-Za-z]{8,9}"
+       class="form-control text-center mb-4 input-custom" />
 
-         
-          <input
-            type="tel"
-            placeholder="Teléfono"
-            required
-            class="form-control text-center mb-4 input-custom"
-            [(ngModel)]="formData.telefono"
-            id="telefono"
-            name="telefono"
-          />
+<!-- Teléfono -->
+<div *ngIf="telefono.invalid && telefono.touched" class="text-danger mb-1">
+  <span *ngIf="telefono.errors?.['required']">El teléfono es obligatorio</span>
+  <span *ngIf="telefono.errors?.['pattern']">Introduce un teléfono válido (9 dígitos)</span>
+</div>
+<input type="tel" placeholder="Teléfono"
+       name="telefono" required
+       [(ngModel)]="formData.telefono"
+       #telefono="ngModel"
+       pattern="[0-9]{9}"
+       class="form-control text-center mb-4 input-custom" />
 
-          <input
-            type="email"
-            placeholder="Email"
-            required
-            class="form-control text-center mb-4 input-custom"
-            [(ngModel)]="formData.email"
-            id="email"
-            name="email"
-          />
-
-          <input
-          placeholder="Población"
-            type="text"
-            required
-            class="form-control text-center mb-4 input-custom"
-            [(ngModel)]="formData.poblacion"
-            id="poblacion"
-            name="poblacion"
-          />
-
-        
-          <input
-          placeholder="Provincia"
-            type="text"
-            required
-            class="form-control text-center mb-4 input-custom"
-            [(ngModel)]="formData.provincia"
-            id="provincia"
-            name="provincia"
-          />
-
-          <label for="notas">Notas del pedido (opcional)</label>
-          <textarea
-            name="notas"
-            id="notas"
-            class="form-control text-center mb-4 input-custom"
-            placeholder="Notas sobre tu pedido, notas especiales para la entrega"
-            [(ngModel)]="formData.notas"
-          ></textarea>
-
-          <input type="hidden" name="paleId" [(ngModel)]="formData.paleIds" />
-
-          <!-- Campo oculto con el valor del método de pago seleccionado -->
-          <input
-            type="hidden"
-            [(ngModel)]="formData.metodoPago"
-            name="metodoPago"
-          />
+    <!-- Email -->
+     <div *ngIf="email.invalid && (email.touched || email.dirty)" class="text-danger mb-1">
+  <span *ngIf="email.errors?.['required']">El email es obligatorio</span>
+  <span *ngIf="email.errors?.['pattern']">Introduce un email válido (solo Gmail o Hotmail)</span>
+</div>
+<input type="text" placeholder="Email"
+       name="email"
+       required
+       [(ngModel)]="formData.email"
+       #email="ngModel"
+       pattern="^[a-zA-Z0-9._%+-]+@(gmail\.com|hotmail\.com)$"
+       class="form-control text-center mb-4 input-custom" />
 
 
-          <input
-          type="hidden"
-          [(ngModel)]="formData.pagoTotal"
-          name="pagototal"
-        />
-          <div class="d-flex justify-content-center mt-4 mb-3">
-            <button
-              [disabled]="pale.length === 0 || !form.valid"
-              class="btn btn-primary mx-auto col-lg-8"
-            >
-              Realizar el pago
-            </button>
-          </div>
-        </fieldset>
-      </form>
+    <!-- Población -->
+       <div *ngIf="poblacion.invalid && poblacion.touched" class="text-danger">
+      <span *ngIf="poblacion.errors?.['required']">La población es obligatoria</span>
+    </div>
+    <input type="text" placeholder="Población"
+           name="poblacion" required
+           [(ngModel)]="formData.poblacion"
+           #poblacion="ngModel"
+           class="form-control text-center mb-4 input-custom" />
+ 
+
+    <!-- Provincia -->
+     <div *ngIf="provincia.invalid && provincia.touched" class="text-danger">
+      <span *ngIf="provincia.errors?.['required']">La provincia es obligatoria</span>
+    </div>
+
+    <input type="text" placeholder="Provincia"
+           name="provincia" required
+           [(ngModel)]="formData.provincia"
+           #provincia="ngModel"
+           class="form-control text-center mb-4 input-custom" />
+    
+
+    <!-- Notas (opcional) -->
+    <textarea name="notas"
+              placeholder="Notas sobre tu pedido (opcional)"
+              [(ngModel)]="formData.notas"
+              class="form-control text-center mb-4 input-custom"></textarea>
+
+    <!-- Hidden fields -->
+    <input type="hidden" [(ngModel)]="formData.paleIds" name="paleIds" />
+    <input type="hidden" [(ngModel)]="formData.metodoPago" name="metodoPago" />
+    <input type="hidden" [(ngModel)]="formData.pagoTotal" name="pagototal" />
+
+    <div class="d-flex justify-content-center mt-4 mb-3">
+      <button [disabled]="pale.length === 0 || form.invalid"
+              class="btn btn-primary mx-auto col-lg-8">
+        Realizar el pago
+      </button>
+    </div>
+  </fieldset>
+</form>
+
     </div>
   </div>
 

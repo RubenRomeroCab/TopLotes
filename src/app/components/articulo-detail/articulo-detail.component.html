@@ -15,8 +15,7 @@
           _ngcontent-ng-c1332714693=""
           class="featurette-heading fw-normal lh-1 mt-5"
         >
-          CORSAIR VENGEANCE DDR5 32GB (2x16GB) DDR5 6000MHz CL30 AMD EXPO Intel
-          XMP iCUE Memoria de Ordenador Compatible - Gris (CMK32GX5M2B6000Z30)
+            {{ articulo?.nombre }}
         </h2>
         <p _ngcontent-ng-c1332714693="" class="lead">
           <strong _ngcontent-ng-c1332714693="">Precio:</strong
@@ -47,16 +46,15 @@
       <div _ngcontent-ng-c1332714693="" class="col-12 col-md-6 mt-3 mb-3">
         <div _ngcontent-ng-c1332714693="" class="img-container">
           <img
-            _ngcontent-ng-c1332714693=""
             class="img-fluid rounded-3"
+            [src]="articulo?.img"
+            alt="{{ articulo?.nombre }}"
             style="
               width: 100%;
               height: 100%;
               object-fit: cover;
               object-position: center;
             "
-            alt="CORSAIR VENGEANCE DDR5 32GB (2x16GB) DDR5 6000MHz CL30 AMD EXPO Intel XMP iCUE Memoria de Ordenador Compatible - Gris (CMK32GX5M2B6000Z30)"
-            src="https://m.media-amazon.com/images/I/71MfdgsWMFL._AC_SX679_.jpg"
           />
         </div>
       </div>
@@ -65,6 +63,7 @@
   <!---->
 </div>
 <!-- Información adicional debajo de la tarjeta -->
+ <div class="container">
 <div class="mt-5 text-center p-4 bg-light rounded-3 mb-3">
   <p>
     <strong
@@ -79,4 +78,6 @@
   <a href="mailto:support@tusitioweb.com" class="btn btn-outline-primary"
     >Contactar con soporte</a
   >
+
+</div>
 </div>

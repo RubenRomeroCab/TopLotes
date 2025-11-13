@@ -1,5 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ChatService } from '../../services/chatbot.service';
 
 @Component({
   selector: 'app-boot',
@@ -10,30 +11,26 @@ import { Component } from '@angular/core';
 })
 export class BootComponent {
   chatAbierto = false;
-
   mensajes: { texto: string; esUsuario: boolean }[] = [
-    { texto: '¡Hola! ¿En qué puedo ayudarte?', esUsuario: false },
+    { texto: '¡Hola! ¿En qué puedo ayudarte?', esUsuario: false }
   ];
 
-  constructor() {}
+  constructor(private chatService: ChatService) {}
 
-  cerrar() {
-    this.chatAbierto = false;
-  }
   abrir() {
     this.chatAbierto = !this.chatAbierto;
   }
 
-  enviarMensaje(texto: string) {
+  async enviarMensaje(texto: string) {
     if (!texto.trim()) return;
 
     this.mensajes.push({ texto, esUsuario: true });
 
-    setTimeout(() => {
-      this.mensajes.push({
-        texto: 'Esta es una respuesta automática.',
-        esUsuario: false,
-      });
-    }, 1000);
+    try {
+      const respuesta = await this.chatService.enviarMensaje(texto);
+      this.mensajes.push({ texto: respuesta, esUsuario: false });
+    } catch (e) {
+      this.mensajes.push({ texto: 'Oops, algo salió mal 😅', esUsuario: false });
+    }
   }
 }

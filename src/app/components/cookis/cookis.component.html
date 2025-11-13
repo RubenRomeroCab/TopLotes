@@ -1,19 +1,4 @@
-<div class="container">
-  @if (mostrarCookis) {
-  <div class="entrada text-center mt-4">
-    <div class="cookie-overlay">
-      <div class="cookie-modal">
-        <h3>🍪 Usamos Cookies</h3>
-        <p>
-          Este sitio utiliza cookies para mejorar tu experiencia. Al continuar,
-          aceptas nuestra
-          <a href="/politica-cookies" target="_blank">Política de Cookies</a>.
-        </p>
-        <button class="btn btn-primary" (click)="cookisAceptar()">
-          Aceptar
-        </button>
-      </div>
-    </div>
-  </div>
-  }
+<div *ngIf="mostrarCookis" class="cookie-banner fixed-bottom bg-dark text-white p-3 text-center">
+  🍪 Usamos cookies para mejorar tu experiencia. <a href="/politicas-envio" class="text-warning">Más info</a>
+  <button class="btn btn-light btn-sm ms-2" (click)="cookisAceptar()">Aceptar</button>
 </div>
